@@ -1,5 +1,5 @@
 def extractdata():
-    #hola como estas
+    
     import bs4
     from urllib.request import Request, urlopen
     import numpy as np
