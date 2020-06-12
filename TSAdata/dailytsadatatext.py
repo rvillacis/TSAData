@@ -44,18 +44,19 @@ def extractdata():
 
 def sendtext(textcontent):
 
-    from twilio.rest import Client 
+    from twilio.rest import Client
+    import os 
 
-    account_sid = 'AC33eb60cac916bb3bca236c96f8231c74'
-    auth_token = 'adec748b2d6a4f0fa79cb5e349dec72a'
-    phone_number = '+12058786439'
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+    phone_number = os.environ['TWILIO_PHONE_NUMBER']
  
     client = Client(account_sid, auth_token) 
     
     message = client.messages.create( 
                                 from_=phone_number,  
                                 body=textcontent,      
-                                to='+18579196661' 
+                                to=os.environ['MY_PHONE_NUMBER'] 
                             ) 
     
     print('Message Sent')
