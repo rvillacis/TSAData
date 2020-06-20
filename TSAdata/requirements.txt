@@ -1,0 +1,7 @@
+bs4
+urllib
+numpy
+twilio
+pandas
+matplotlib
+seaborn
